@@ -4,4 +4,61 @@
 
 body{
   background-color: rgba(0, 0, 255, 0.164);
+  width: 90%;
+  margin: 0 auto;
+}
+
+#root{
+  width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-content: space-evenly;
+  column-gap: 3rem;
+  row-gap: 5rem;
+  margin: 3rem auto;
+  width: 100%;
+}
+
+.card{
+  width: 100%;
+}
+
+.card-img-top{
+  height: 300px;
+  object-fit: cover;
+}
+
+
+
+.card-body {
+  display: grid;
+  grid-template-rows: 30px 2fr 10px 30px;
+}
+
+.card.text{
+  height:max-content;
+  font-size: 4vw;
+  line-height: 3vh;
+}
+
+.card-title{
+  font-size: 2vw;
+  line-height: 2vh;
+}
+
+.like-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  grid-row-start: 4;
+}
+
+.like-button:hover{
+  cursor: pointer;
+  width: fit-content;
 }

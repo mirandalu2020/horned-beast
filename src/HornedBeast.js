@@ -1,18 +1,37 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
 
 class HornedBeast extends React.Component{
+  constructor (props) {
+    //super brings down all the props
+    super(props);
+    this.state = {
+      likes: 0
+    }
+  }
+
+  handleLikes = () => {
+    // when the user clicks on "like the beast", update the value of this.state.likes
+    this.setState({
+      //note that it cannot be used with ++, because setState updates the state and state will update on its own
+      likes: this.state.likes + 1,
+    })
+  }
 
   render() {
-    console.log(this.props.title);
+      //STEP 1: render all title and images
     return(
-      <>
-        <h2>{this.props.title}</h2>
-        <img src = {this.props.imageUrl} alt={this.alt}/>
-        <p>{this.props.description}</p>
-
-
-      </>
-
+      <Card>
+        <Card.Img 
+        variant="top" 
+        src={this.props.imageUrl}
+        alt = {"this is an image of " + this.props.title} />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <Card.Text className="like-button" onClick={this.handleLikes}>{this.state.likes} ❤️Favorite this beast</Card.Text>
+        </Card.Body>
+    </Card>
     )
   }
 }
