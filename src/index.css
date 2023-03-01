@@ -26,7 +26,7 @@ main {
   width: 100%;
 }
 
-.card-img-top{
+.card-img{
   height: 300px;
   object-fit: cover;
 }
