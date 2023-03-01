@@ -21,3 +21,11 @@ Estimate of time needed to complete: 2 hour
 Start time: 1300
 Finish time: 1520
 Actual time needed to complete: 2.5hr
+
+## Modal
+
+Feature #1: Adding modal to display images
+Estimate of time needed to complete: 2 hour
+Start time: 1300
+Finish time: 1350
+Actual time needed to complete: 50min
