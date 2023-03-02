@@ -7,7 +7,7 @@ class Filter extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      hornNumber:" ",
+      hornNumber: 1,
     }
   }
 
@@ -20,7 +20,7 @@ class Filter extends React.Component{
   handleSubmitButton = (event) => {
     event.preventDefault();
     console.log(this.state.hornNumber)
-      this.props.handleSubmit(parseInt(this.state.hornNumber))
+    this.props.handleSubmit(parseInt(this.state.hornNumber))
   }
 
   render(){
@@ -33,7 +33,6 @@ class Filter extends React.Component{
           <option value="3" >3</option>
           <option value="100">100</option>
         </Form.Select>
-        
         <Button type="submit">Submit</Button>
         </Form>
       </>
