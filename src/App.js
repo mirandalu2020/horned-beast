@@ -5,16 +5,18 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
+import SelectedBeast from './SelectedBeast';
 import data from './data.json'
-import Modal from 'react-bootstrap/Modal';
 import './App.css';
 
 //declare class
+
 class App extends React.Component {
+
+
   constructor(props){
     super(props);
     this.state = {
-    
       //set state: is modal displaying
       showModal: false,
       beastImgUrl: '',
@@ -22,21 +24,19 @@ class App extends React.Component {
     }
   }
 
-  //each updates the state of the modal
   handleCloseModal = () => {
     this.setState({
       showModal: false
     })
   }
-
-  SelectedBeast = (imageUrl,description) => {
+  handleOpenModal = (beastImgUrl,beastDescription) => {
     this.setState({
       showModal: true,
-      beastImg: imageUrl,
-      beastDescription: description,
-
-    });
+      beastImgUrl: beastImgUrl,
+      beastDescription:beastDescription,
+    })
   }
+
 
   render() {
 
@@ -45,21 +45,20 @@ class App extends React.Component {
   // the fractional marginal unit to wrap components inside -- wrap JSX inside parents
     <>
       <Header/>
-      <p onClick={this.SelectedBeast}>Open Modal</p>
 
       <Main 
       data = {data} 
-      SelectedBeast = {this.SelectedBeast}/>
+      handleOpenModal = {this.handleOpenModal}
+      />
 
       <Footer/>
 
-      <Modal 
-      show={this.state.showModal} 
-      onHide = {this.handleCloseModal}>
-      <img src={this.state.beastImg} alt=" "/>
-      <p>{this.state.beastDescription}</p>          
-      
-      </Modal>
+      <SelectedBeast
+      showModal={this.state.showModal} 
+      onHide = {this.handleCloseModal}
+
+      beastImgUrl ={this.state.beastImgUrl}
+      beastDescription = {this.state.beastDescription} />
 
     </>
     )

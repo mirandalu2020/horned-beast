@@ -18,10 +18,10 @@ class HornedBeast extends React.Component{
     })
   }
 
-  handleImgClick = () =>{
-    //this.props comes from the parent
-    this.props.SelectedBeast(this.props.imageUrl,this.props.description)
-  }
+handleImgClick = () => {
+    this.props.handleOpenModal(this.props.imgUrl, this.props.description);
+}
+
 
   render() {
       //STEP 1: render all title and images
@@ -30,14 +30,13 @@ class HornedBeast extends React.Component{
         <img 
         className="card-img"
         variant="top" 
-        src={this.props.imageUrl}
+        src={this.props.imgUrl}
         alt = {"this is an image of " + this.props.title} 
 
         onClick = {this.handleImgClick}/>
 
         <Card.Body>
-          <Card.Title onClick = {this.props.handleHeaderClick}>
-            {this.props.title}</Card.Title>
+          <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className="like-button" onClick={this.handleLikes}>{this.state.likes} ❤️Favorite this beast</Card.Text>
         </Card.Body>
