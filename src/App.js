@@ -2,12 +2,15 @@
 
 //all class-based components: import --> class --> export
 import React from 'react';
+import './App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import SelectedBeast from './SelectedBeast';
+
+
 import data from './data.json'
-import './App.css';
+
 
 //declare class
 
@@ -58,8 +61,9 @@ class App extends React.Component {
       onHide = {this.handleCloseModal}
 
       beastImgUrl ={this.state.beastImgUrl}
-      beastDescription = {this.state.beastDescription} />
-
+      beastDescription = {this.state.beastDescription} 
+      
+      />
     </>
     )
   }
