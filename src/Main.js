@@ -34,28 +34,29 @@ class Main extends React.Component{
   render() {
     let beastArr = [];
     if (this.state.sortedData === " ") {
-    beastArr = this.props.data.map((beast,idx) => {
+    beastArr = this.props.data.map((beast) => {
       return (
           <HornedBeast
-            title={beast._id + '. ' + beast.title}
+            title={beast.title}
             imgUrl={beast.image_url}
             description={beast.description}
             handleOpenModal={this.props.handleOpenModal}
-            key={idx} 
+
+            key={beast._id} 
           />
       )
     })
   }
 
   else {
-      beastArr = this.state.sortedData.map((beast,idx) => {
+      beastArr = this.state.sortedData.map((beast) => {
       return (
           <HornedBeast
             title={beast._id + '. ' + beast.title}
             imgUrl={beast.image_url}
             description={beast.description}
             handleOpenModal={this.props.handleOpenModal}
-            key={idx} 
+            key={beast._id} 
           />
       )
     })
