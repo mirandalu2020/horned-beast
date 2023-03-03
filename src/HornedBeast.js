@@ -26,21 +26,22 @@ handleImgClick = () => {
   render() {
       //STEP 1: render all title and images
     return(
+      <>
       <Card>
-        <img 
-        className="card-img"
-        variant="top" 
-        src={this.props.imgUrl}
-        alt = {"this is an image of " + this.props.title} 
+        <img
+          className="card-img"
+          variant="top"
+          src={this.props.imgUrl}
+          alt={"this is an image of " + this.props.title}
 
-        onClick = {this.handleImgClick}/>
+          onClick={this.handleImgClick} />
 
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
           <Card.Text className="like-button" onClick={this.handleLikes}>{this.state.likes} ❤️Favorite this beast</Card.Text>
         </Card.Body>
-    </Card>
+      </Card></>
     )
   }
 }

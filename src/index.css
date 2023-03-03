@@ -62,3 +62,8 @@ main {
   cursor: pointer;
   width: fit-content;
 }
+
+.form-select{
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
