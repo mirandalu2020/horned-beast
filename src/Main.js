@@ -9,22 +9,30 @@ class Main extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      sortedData:" ",
+      sortedData:this.props.data,
     }
   }
 
   handleSubmit = (hornNumber) => {
     console.log(hornNumber);
-    
+    if (!isNaN(hornNumber)) {
     let filteredData = this.props.data.filter(item => item.horns === hornNumber);
     this.setState({
-      sortedData: filteredData
+      sortedData: filteredData,
     })
   }
 
+   else {
+    console.log(this.state.sortedData)
+    this.setState({
+      sortedData: " ",
+    })
+
+  }
+}
+
   render() {
     let beastArr = [];
-
     if (this.state.sortedData === " ") {
     beastArr = this.props.data.map((beast,idx) => {
       return (

@@ -32,6 +32,7 @@ class Filter extends React.Component{
           <option value="2">2</option>
           <option value="3" >3</option>
           <option value="100">100</option>
+          <option value="all">ALL</option>
         </Form.Select>
         <Button type="submit">Submit</Button>
         </Form>
